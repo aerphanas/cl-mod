@@ -1,0 +1,8 @@
+("quicklisp" .
+ (:class qlot/source/dist:source-dist
+  :initargs (:distribution "http://beta.quicklisp.org/dist/quicklisp.txt" :%version :latest)
+  :version "2023-06-18"))
+("cl-ppcre" .
+ (:class qlot/source/ql:source-ql
+  :initargs (:%version "2023-06-18")
+  :version "ql-2023-06-18"))

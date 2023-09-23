@@ -2,12 +2,15 @@
   :version "0.1.0"
   :author "Muhammad Aviv Burhanudin"
   :license "ISC"
-  :depends-on ()
+  :depends-on ("cl-ppcre")
   :components ((:module "src"
                 :components
                 ((:file "main"))))
-  :description "File Mod Utitlity"
-  :in-order-to ((test-op (test-op "cl-mod/tests"))))
+  :description "File permision callculator"
+  :in-order-to ((test-op (test-op "cl-mod/tests")))
+  :build-operation "program-op"
+  :build-pathname "cl-mod"
+  :entry-point "cl-mod:main")
 
 (defsystem "cl-mod/tests"
   :author "Muhammad Aviv Burhanudin"
