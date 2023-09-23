@@ -1,5 +1,6 @@
-(defpackage cl-project-template
+(defpackage cl-mod
   (:use :cl))
-(in-package :cl-project-template)
+
+(in-package :cl-mod)
 
 ;; blah blah blah.

@@ -1,4 +1,4 @@
-* Cl-Project-Template 
+* Cl-mod
 
 ** Usage
 
