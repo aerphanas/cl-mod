@@ -1,5 +1,56 @@
-* Cl-mod
+* cl-mod
 
 ** Usage
 
+#+begin_src sh
+    ./cl-mod
+
+    NAME:
+     cl-mod - File permision callculator
+
+    USAGE:
+     cl-mod [arguments ...]
+
+    EXAMPLES:
+     
+     get permision number from string : 
+    
+     cl-mod rw-r--r--
+    
+     get permision string from number : 
+    
+     cl-mod 644
+    
+    AUTHORS:
+     Muhammad Aviv Burhanudin <muhamadaviv14@gmail.com>
+    
+    LICENSE:
+     ISC
+
+  #+end_src
+
 ** Installation
+
+*** Prerequisite
+- roswell
+- qlot
+- make
+
+*** Build
+
+#+begin_src sh
+  qlot install
+  make build
+#+end_src
+
+** Author
+
++ Muhammad Aviv Burhanudin (muhamadaviv14@gmail.com)
+
+** Copyright
+
+Copyright (c) 2023 Muhammad Aviv Burhanudin (muhamadaviv14@gmail.com)
+
+** License
+
+Licensed under the ISC license.
