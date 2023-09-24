@@ -36,7 +36,13 @@
 - qlot
 - make
 
-*** Build
+*** via Roswell
+
+#+begin_src sh
+  ros install aerphanas/cl-mod
+#+end_src
+
+*** Build from source
 
 #+begin_src sh
   qlot install
