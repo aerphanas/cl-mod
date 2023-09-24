@@ -78,9 +78,7 @@
 
 (declaim (ftype (function ()) main))
 (defun main ()
-  (let ((input-length
-	  (length (car (uiop:command-line-arguments))))
-	(input-args
+  (let ((input-args
 	  (car (uiop:command-line-arguments))))
     (cond ((valid-inputp input-args :symbolic t)
 	   (permission-symbolic-numeric input-args))
