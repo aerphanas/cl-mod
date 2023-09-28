@@ -6,7 +6,7 @@
   :components ((:module "src"
                 :components
                 ((:file "main"))))
-  :description "File permision callculator"
+  :description "File permission callculator"
   :in-order-to ((test-op (test-op "cl-mod/tests")))
   :build-operation "program-op"
   :build-pathname "cl-mod"

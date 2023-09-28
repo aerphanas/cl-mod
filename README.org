@@ -6,18 +6,18 @@
     ./cl-mod
 
     NAME:
-     cl-mod - File permision callculator
+     cl-mod - File permission callculator
 
     USAGE:
      cl-mod [arguments ...]
 
     EXAMPLES:
      
-     get permision number from string : 
+     get permission number from string : 
     
      cl-mod rw-r--r--
     
-     get permision string from number : 
+     get permission string from number : 
     
      cl-mod 644
     
@@ -47,6 +47,12 @@
 #+begin_src sh
   qlot install
   make build
+#+end_src
+
+*** Test
+
+#+begin_src sh
+  make test
 #+end_src
 
 ** Author
