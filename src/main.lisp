@@ -8,19 +8,19 @@
 
 (declaim (ftype (function ()) help))
 (defun help ()
-  "output help message on console"
+  "print help message on console"
   (progn
-    (format t "NAME:~% cl-mod - File permision callculator~%~%")
+    (format t "NAME:~% cl-mod - File permission callculator~%~%")
     (format t "USAGE:~% cl-mod [arguments ...]~%~%")
     (progn
-      (format t "EXAMPLES:~% ~% get permision number from string : ~%~%")
+      (format t "EXAMPLES:~% ~% get permission number from string : ~%~%")
       (format t " cl-mod rw-r--r--~%")
-      (format t "~% get permision string from number : ~%~%")
+      (format t "~% get permission string from number : ~%~%")
       (format t " cl-mod 644~%~%"))
     (format t "AUTHORS:~% Muhammad Aviv Burhanudin <muhamadaviv14@gmail.com>~%~%")
     (format t "LICENSE:~% ISC~%~%")))
 
-(declaim (ftype (function (string)) permission-numeric-symbolic))
+(declaim (ftype (function (string) string) permission-numeric-symbolic))
 (defun permission-numeric-symbolic (numeric-str)
   "convert numeric (octal) input to symbolic "
   (flet ((get-symbolic-rpr (num)
@@ -33,12 +33,12 @@
     (let ((first-numeric  (get-symbolic-rpr 0))
 	  (second-numeric (get-symbolic-rpr 1))
 	  (third-numeric  (get-symbolic-rpr 2)))
-      (format t "Result : ~{~A~}~%"
+      (format nil "~{~A~}"
 	      (list first-numeric
 		    second-numeric
 		    third-numeric)))))
     
-(declaim (ftype (function (string)) permission-symbolic-numeric))
+(declaim (ftype (function (string) string) permission-symbolic-numeric))
 (defun permission-symbolic-numeric (symbolic-str)
   "convert symbolic input to numeric (octal)"
   (labels ((split-string-to (str num)
@@ -55,7 +55,7 @@
     (let ((first-symbolic  (get-numeric-rpr 0))
 	  (second-symbolic (get-numeric-rpr 1))
 	  (third-symbolic  (get-numeric-rpr 2)))
-      (format t "Result : ~{~A~}~%"
+      (format nil "~{~A~}"
 	      (list first-symbolic
 		    second-symbolic
 		    third-symbolic)))))
@@ -78,12 +78,15 @@
 
 (declaim (ftype (function ()) main))
 (defun main ()
+  "Main program function"
   (let ((input-args
 	  (car (uiop:command-line-arguments))))
     (cond ((valid-inputp input-args :symbolic t)
-	   (permission-symbolic-numeric input-args))
+	   (format t "~A~%"
+		   (permission-symbolic-numeric input-args)))
 	  ((valid-inputp input-args :numeric t)
-	   (permission-numeric-symbolic input-args))
+	   (format t "~A~%"
+		   (permission-numeric-symbolic input-args)))
 	  (t (help)))))
 
 ;; blah blah blah.
